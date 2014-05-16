@@ -1,6 +1,6 @@
 FROM base
 
-MAINTAINER ixixi "https://github.com/ixixi"
+MAINTAINER ixixizko-at-gmail.com
 
 # Install packages for building ruby,jruby
 RUN apt-get update
