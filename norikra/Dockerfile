@@ -29,12 +29,12 @@ RUN bash -l -c 'for v in $(echo "jruby-1.7.9 2.1.1"); do rbenv global $v; gem in
 
 # Install norikra
 RUN bash -l -c 'rbenv global jruby-1.7.9 ; gem install norikra'
-RUN mkdir /var/log/norikra
+RUN mkdir -p /var/log/norikra
 
 # Install fluentd, fluent-plugin-norikra
 RUN bash -l -c 'rbenv shell 2.1.1 ; gem install fluentd fluent-plugin-norikra'
-RUN mkdir ~/fluentd
-RUN echo "2.1.1" > ~/fluentd/.ruby-version
-ADD fluentd_ex1.conf ~/fluentd/
-ADD fluentd_ex2.conf ~/fluentd/
+RUN mkdir /etc/fluent
+RUN echo "2.1.1" > /etc/fluent/.ruby-version
+ADD fluentd_ex1.conf /etc/fluent/
+ADD fluentd_ex2.conf /etc/fluent/
 
