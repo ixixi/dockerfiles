@@ -38,3 +38,8 @@ RUN echo "2.1.1" > /etc/fluent/.ruby-version
 ADD fluentd_ex1.conf /etc/fluent/
 ADD fluentd_ex2.conf /etc/fluent/
 
+# set up locale
+RUN locale-gen ja_JP.UTF-8
+RUN update-locale LANG=ja_JP.UTF-8
+ENV LC_ALL ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
